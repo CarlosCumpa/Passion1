@@ -1,0 +1,63 @@
+<div class="container">
+  <div style="text-align: center;">
+  <h1>Lista de clientes</h1>
+  </div>
+ <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="id_cliente">
+    <th mat-header-cell *matHeaderCellDef> id_cliente </th>
+    <td mat-cell *matCellDef="let element"> {{element.id_cliente}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef> nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="apellido">
+    <th mat-header-cell *matHeaderCellDef> apellido </th>
+    <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="fechanacimiento">
+    <th mat-header-cell *matHeaderCellDef> fechanacimiento </th>
+    <td mat-cell *matCellDef="let element"> {{element.fechanacimiento} </td>
+  </ng-container>
+
+    <!-- Name Column -->
+  <ng-container matColumnDef="edad">
+    <th mat-header-cell *matHeaderCellDef> edad </th>
+    <td mat-cell *matCellDef="let element"> {{element.edad}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+    <td mat-cell *matCellDef="let element"> <button mat-raised-button color="primary"
+        [routerLink]="['edicion', element?.id]">Actualizar</button>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="symbol">
+
+    <th mat-header-cell *matHeaderCellDef> Symbol </th>
+    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+  
+  <div class="example-button-container">
+
+    <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon"
+      routerLink="/clientes/nuevo">
+      <mat-icon>1+</mat-icon>
+    </button>
+  </div>
+
+</div>

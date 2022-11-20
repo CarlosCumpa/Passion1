@@ -1,0 +1,43 @@
+<div class="container">
+
+    <h1>clientes</h1>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>id_cliente</mat-label>
+      <input matInput placeholder="id_cliente" [(ngModel)]="cliente.id_cliente">
+    </mat-form-field>
+  
+    <br>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>nombre</mat-label>
+      <input matInput required placeholder="nombre" [(ngModel)]="cliente.nombre">
+  
+    </mat-form-field>
+    <br>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>apellido</mat-label>
+        <input matInput required placeholder="apellido" [(ngModel)]="cliente.apellido">
+    
+      </mat-form-field>
+      <br>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Fechanacimiento</mat-label>
+        <input matInput required placeholder="Fechanacimiento" [(ngModel)]="cliente.fechanacimiento">
+    
+      </mat-form-field>
+      <br>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>edad</mat-label>
+        <input matInput required placeholder="edad" [(ngModel)]="cliente.edad">
+    
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+    <button mat-raised-button color="warn" routerLink="/clientes">Cancelar</button>
+    <p>{{mensaje}}</p>
+  
+  </div>
